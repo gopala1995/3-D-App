@@ -1,10 +1,14 @@
-
+import React from "react";
+import { useState } from 'react';
 import './App.css';
+import { Tree } from "./Components/Tree";
 
 function App() {
+ 
+
   return (
     <div className="App">
-      
+      <Tree/>
     </div>
   );
 }
