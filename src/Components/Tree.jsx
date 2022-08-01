@@ -4,7 +4,7 @@ export const Tree = () => {
   const [Counter, setCounter] = useState(0)
 
   const Increment = () =>{
-          setCounter(Counter+1)
+          setCounter(Counter+2)
   }
 
   return <div>
