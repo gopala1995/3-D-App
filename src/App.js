@@ -2,7 +2,7 @@ import React, { Suspense, useMemo } from "react";
 import "./App.css";
 import * as THREE from "three";
 import { Canvas, useLoader } from "react-three-fiber";
-import circleImg from "./assets/crrr.png";
+import circleImg from "./assets/icons.png";
 
 function Points() {
   const Imgtext = useLoader(THREE.TextureLoader, circleImg);
