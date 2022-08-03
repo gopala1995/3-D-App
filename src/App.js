@@ -1,22 +1,38 @@
 import React, { Suspense, useMemo } from "react";
 import "./App.css";
 import * as THREE from "three";
-import { Canvas,useLoader } from "react-three-fiber";
-import circleImg from "./assets/icons.png"
+import { Canvas, useLoader } from "react-three-fiber";
+import circleImg from "./assets/crrr.png";
 
 function Points() {
-const Imgtext = useLoader(THREE.TextureLoader, circleImg)
-let position = useMemo(()=>{
+  const Imgtext = useLoader(THREE.TextureLoader, circleImg);
 
-})
-  return(
-    <point>
+  const count = 100;
+  const sep = 3;
+  let positions = useMemo(() => {
+    let positions = [];
+
+    for (let xi = 0; xi < count; xi++) {
+      for (let zi = 0; zi < count; zi++) {
+        let x = sep * (xi - count / 2);
+        let z = sep * (zi - count / 2);
+        let y = 0;
+        positions.push(x, y, z);
+      }
+    }
+
+    return new Float32Array(positions);
+  }, [count, sep]);
+
+  return (
+    <points>
       <bufferGeometry attach="geometry">
-         <bufferAttribute 
-          attachObject={["atributes", "postion"]}
-          array={position}
-          
-         />
+        <bufferAttribute
+          attachObject={["attributes", "position"]}
+          array={positions}
+          count={positions.length / 3}
+          itemSize={3}
+        />
       </bufferGeometry>
       <pointsMaterial
         attach="material"
@@ -28,8 +44,8 @@ let position = useMemo(()=>{
         alphaTest={0.5}
         opacity={1.0}
       />
-    </point>
-  )
+    </points>
+  );
 }
 
 function AnimationCanvas() {
