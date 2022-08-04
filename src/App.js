@@ -2,7 +2,7 @@ import React, { Suspense, useMemo } from "react";
 import "./App.css";
 import * as THREE from "three";
 import { Canvas, useLoader } from "react-three-fiber";
-import circleImg from "./assets/icons.png";
+import circleImg from "./assets/crrr.png";
 
 function Points() {
   const Imgtext = useLoader(THREE.TextureLoader, circleImg);
@@ -28,7 +28,7 @@ function Points() {
     <points>
       <bufferGeometry attach="geometry">
         <bufferAttribute
-          attachObject={["attributes", "position"]}
+          attachObject={['attributes', 'position']}
           array={positions}
           count={positions.length / 3}
           itemSize={3}
@@ -42,7 +42,7 @@ function Points() {
         sizeAttenuation
         transparent={false}
         alphaTest={0.5}
-        opacity={1.0}
+        opacity={1}
       />
     </points>
   );
@@ -55,7 +55,7 @@ function AnimationCanvas() {
       camera={{ position: [100, 10, 0], fov: 75 }}
     >
       <Suspense fallback={null}>
-        <Points />
+        <Points/>
       </Suspense>
     </Canvas>
   );
