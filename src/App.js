@@ -28,7 +28,7 @@ function Points() {
     <points>
       <bufferGeometry attach="geometry">
         <bufferAttribute
-          attachObject={['attributes', 'position']}
+          attachObject={["attributes", "position"]}
           array={positions}
           count={positions.length / 3}
           itemSize={3}
@@ -37,7 +37,7 @@ function Points() {
       <pointsMaterial
         attach="material"
         map={Imgtext}
-        color={0x00AAFF}
+        color={0x00aaff}
         size={0.5}
         sizeAttenuation
         transparent={false}
@@ -55,7 +55,7 @@ function AnimationCanvas() {
       camera={{ position: [100, 10, 0], fov: 75 }}
     >
       <Suspense fallback={null}>
-        <Points/>
+        <Points />
       </Suspense>
     </Canvas>
   );
